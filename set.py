@@ -1,6 +1,5 @@
 star = {2,4,6,2, "Yes", "No", 2.4, 11,5+1j}
 
-
 star.add("Lokesh")
 print(star)
 
@@ -11,7 +10,6 @@ print(star)
 # print(star)
 
 #star.clear()
-
 
 # remove() will give error if argument doesn't exist
 
