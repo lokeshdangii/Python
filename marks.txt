@@ -1,4 +1,1 @@
-Math marks is 90.
-English marks is 90 .
-Hindi marks is 90.
-Avrage of marks is 90.0 
+lokesh,12,14,15
