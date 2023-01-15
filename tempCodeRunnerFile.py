@@ -1,1 +1,1 @@
-k[v.index(max(v))]
+1
