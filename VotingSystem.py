@@ -1,4 +1,3 @@
-
 nominee1 = input("Enter the name of 1st nominee: ")
 nominee2 = input("Enter the name of 2nd nominee: ")
 
@@ -12,9 +11,9 @@ no_of_voter = len(voter_id)
 
 while True:
     
+
     voter = int(input("Enter your voter id : "))
     if voter in voter_id:
-
         print("You are eligible voter ")
         voter_id.remove(voter) 
 
@@ -26,13 +25,10 @@ while True:
         vote = int(input("Enter your valuable vote : "))
         if vote == 1:
             nm1_votes += 1
-
         elif vote == 2:
             nm2_votes += 1
-
         elif vote == 0 or vote > 2:
-            print("Check your Pressed Key ..!!")   
-
+            print("Check your Pressed Key ..!!")    
         else :
             print("You are not a waiter or already voted...!!")
     
@@ -40,19 +36,14 @@ while True:
 
         print("-----------------------------------")
         print("Voting Session is Over...!!")
-
         if nm1_votes > nm2_votes:
-
             percent = (nm1_votes/no_of_voter)*100
             print(nominee1,"has won the election with",percent,"% of votes")
             break 
-
         elif nm2_votes > nm1_votes:
-
             percent = (nm2_votes/no_of_voter)*100
             print(nominee2,"has won the election with",percent,"% of votes")
             break
-
         else:
             print("Both have equal number of votes...!!")
             break
