@@ -1,0 +1,12 @@
+Object Oriented Programming --
+
+1. Class and Object
+2. Data Abstraction
+3. Polymorphism
+4. Inheritance 
+5. Data Encapsulation
+6. Dynamic Binding
+
+
+Class ;- collection of real word entities is said Class
+Object ;- any real word entity
