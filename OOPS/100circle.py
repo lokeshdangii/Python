@@ -11,10 +11,24 @@ def dwrite(x):
     file1 = open("detail100.txt","a")
     file1.write(x)
     file1.close()
-    print("write operation done successfully")
+
+    # print("write operation done successfully")
 
 def dread():
-    pass
+    data = open("detail100.txt", "r")
+    data = data.read()
+    record = data.split("\n")
+    print("Data : ",record[i])
+    print()
+    print("-----------------")
+
+    # data.close()
+
+    
+    # print("Area :",record[1])
+    # print("Circumference :",record[2])
+    
+    # x = data.split("\n")
 
 for i in range(1,101):
     var1 = circle(i)
@@ -23,10 +37,11 @@ for i in range(1,101):
     var4 = "{},{},{}\n".format(var1.radius,var2,var3)
 
     dwrite(var4)
-    print("Radius of circle = {} cm".format(var1.radius))    
-    print("Area:{} sq cm".format(var2))
-    print("Circumference: {} cm".format(var3))
-    print("-------------------------------")
+    dread()
+    # print("Radius of circle = {} cm".format(var1.radius))    
+    # print("Area:{} sq cm".format(var2))
+    # print("Circumference: {} cm".format(var3))
+    # print("-------------------------------")
 
 
 
