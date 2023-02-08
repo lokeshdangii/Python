@@ -1,3 +1,4 @@
+rollno = 0
 class Student:
     def __init__(self):
         self.name = input("Enter Student's Name :")
@@ -14,4 +15,16 @@ class Student:
         print("Year of Joining :",self.year)
         print("Course:",self.course)
         print("Contact Details: ",self.contact)
-        
+    
+    def generate_rollno(self):
+        global rollno
+        rollno = rollno + 1
+        self.rollno = rollno 
+        print("Roll no. of Student: ",self.rollno)   
+
+
+print(rollno)
+s1 = Student()
+s1.generate_rollno()
+s1.show_detail()
+print(rollno)
