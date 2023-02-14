@@ -1,0 +1,3 @@
+DX200990,Lokesh,8827037442,Indore,M
+2,Lokesh,88270,Indore,MCA
+3,Dangi,309480,Vijaynagar,Mtech
