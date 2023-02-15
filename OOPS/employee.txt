@@ -1,3 +1,6 @@
 DX200990,Lokesh,8827037442,Indore,M
 2,Lokesh,88270,Indore,MCA
 3,Dangi,309480,Vijaynagar,Mtech
+1,Lokesh ,88270,navlakkha,Marketing
+2,Dangi,442,bhawarkuwa,mtech
+3,paritosh,0394,bholeram,mba

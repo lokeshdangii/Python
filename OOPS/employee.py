@@ -34,12 +34,33 @@ class Manager(employee):
             x = i.split(",")
             if self.depart == x[len(x)-1]:
                 valid_row.append(i)
-    
-# e1 = employee()
-# e1.show_detail()
-# e1.dwrite()
 
-m1 = Manager()
-# m1.show_detail()
-m1.dwrite()
-m1.dept_employee_detail()
+class owner(Manager,employee):
+    def show_all(self):
+        f = open("employee.txt","r")
+        data = f.read()
+        data_row = data.split("\n")
+        data_row.pop()
+        for i in data_row:
+            x = i.split(",")
+            print("-------------------------------------")
+            print("Employee ID :",x[0])
+            print("Name:",x[1])
+            print("Contact : ", x[2])
+            print("Adress : ",x[3])
+            print("Department :",x[4])
+    print("-----------------------------")
+
+s1 = employee()
+s2 = Manager()
+s3 = owner()
+s1.dwrite()
+s2.dwrite()
+s3.dwrite()
+
+s1.show_detail()
+s2.show_detail()
+s2.dept_employee_detail()
+s3.show_detail()
+s3.dept_employee_detail()
+s3.show_all()
