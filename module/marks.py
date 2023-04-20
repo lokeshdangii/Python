@@ -1,14 +1,14 @@
 # import xlsxwriter module     
-import xlsxwriter     
+import xlsxwriter    
       
-book = xlsxwriter.book('Example2.xlsx')     
-sheet = book.add_sheet()     
+book = xlsxwriter.Workbook('Example2.xlsx')     
+sheet = book.add_worksheet()     
        
 # Rows and columns are zero indexed.     
-row = 0    
+row = 5   
 column = 0    
       
-content = ["Parker", "Smith", "John"]     
+content = ["Ram", "Shyaam", "Mohan","Lal"]     
       
 # iterating through the content list     
 for item in content :     

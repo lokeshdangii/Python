@@ -18,6 +18,6 @@ else:
 # calculating combination
 
 ncr = fact(n)/(fact(r)*(fact(n-r)))
-print("combination:"ncr)
+print("combination:",ncr)
         
     
