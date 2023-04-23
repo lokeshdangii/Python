@@ -1,3 +1,5 @@
+# pyramid
+
 row = int(input('Enter number of rows required: '))
 
 for i in range(row):
