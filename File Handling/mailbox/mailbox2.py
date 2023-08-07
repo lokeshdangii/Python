@@ -23,7 +23,7 @@ for i in range(1,len(record)):
     hour = time[4]
     list1.append(hour)
 
-
+list1.sort()
 print(list1)
 
 file.close()
