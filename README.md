@@ -29,7 +29,7 @@ I welcome contributions to this repository! If you have suggestions for improvem
 
 ## Contact
 
-You can reach me via email at [lokeshdangi1045@gmail.com](lokeshdangi1045@gmail.com) or connect with me on [LinkedIn](https://www.linkedin.com/in/lokeshdangi/). 
+You can reach me via email at [lokeshdangi1045@gmail.com](mailto:lokeshdangi1045@gmail.com) or connect with me on [LinkedIn](https://www.linkedin.com/in/lokeshdangi/). 
 
 Thank you for visiting my repository!
 
