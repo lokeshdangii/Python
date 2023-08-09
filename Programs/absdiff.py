@@ -1,5 +1,7 @@
+# Program to calculate the absolute difference in a list
+
 arr = [9,4,1,6,1,6,35,8]
-difflist = []
+difflist = []   # list to store the difference
 
 for i in range(0,len(arr)):
 
