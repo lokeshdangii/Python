@@ -1,11 +1,12 @@
-import calctypecheck as ct
+# Program for calculator
 
-#  
+import calctypecheck as ct
+  
 num1= input("enter the value of num1: ")
 num2= input("enter the value of num2: ")
 
-num1 = ct.tnum2pecheck(num1)
-num2 = ct.tnum2pecheck(num2)
+num1 = ct.typecheck(num1)
+num2 = ct.typecheck(num2)
 
 def calculator(n):
 	if n==1:
@@ -35,14 +36,14 @@ def calculator(n):
 		print("Wrong Choice...!")
 
 def sqcalc(n):
-    sqre = n**n
-    return sqre
+    square = n**n
+    return square
 
 choice =int(input("Enter choice:"))
-ouput = calculator(choice)
-print(ouput)
+output = calculator(choice)
+print(output)
 
-ouput = ct.tnum2pecheck(ouput)
-print("type of output:", type(ouput))
+output = ct.tnum2pecheck(output)
+print("type of output:", type(output))
 
 
