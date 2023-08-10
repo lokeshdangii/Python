@@ -1,3 +1,5 @@
+# Problem Statement:- Python script to create a circle, calculate its area and circumference and write it on a text file
+
 class circle:
     def __init__(self,):
         self.radius = int(input("Enter the radius:"))

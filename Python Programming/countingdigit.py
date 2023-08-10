@@ -1,3 +1,5 @@
+# Python program to count the digit of a number
+
 def count_digit(n):
     count = 0
     while n:

@@ -1,5 +1,6 @@
-# pyramid
+# Python program to print pyramid of stars
 
+# pyramid
 row = int(input('Enter number of rows required: '))
 
 for i in range(row):
@@ -8,4 +9,4 @@ for i in range(row):
     
     for j in range(2*i+1):
         print('*',end='') # printing * and staying in same line
-    print()
+    print() #next line

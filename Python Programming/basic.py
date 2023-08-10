@@ -1,3 +1,5 @@
+# program to understand the concep of value assignment to a variable
+
 a,b,c,d = 10,12,13,14
 print(a,b,c,d, end = " ")
 

@@ -1,4 +1,5 @@
 # program to check the value given by user and conver it accordingly to int or float
+#  this program is imported as a module and function typecheck is used calculator function in calulator proram(calculator.py)
 
 def typecheck(user_value): #function for checking the user value
 
@@ -20,5 +21,5 @@ def typecheck(user_value): #function for checking the user value
 	else:
 		user_value = float(user_value)
 
-	return user_value
+	return user_value 
 

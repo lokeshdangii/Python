@@ -1,3 +1,4 @@
+
 rollno = 0
 class Student:
     def __init__(self):
@@ -23,7 +24,7 @@ class Student:
         print("Roll no. of Student: ",self.rollno)   
 
 
-print(rollno)
+# print(rollno)
 s1 = Student()
 s1.generate_rollno()
 s1.show_detail()

@@ -1,3 +1,5 @@
+# Python Program to check provided year is a leap year or not
+
 year = int(input('Enter year: '))
 
 # Checking for loop and taking decision
