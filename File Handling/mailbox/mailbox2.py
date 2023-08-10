@@ -7,23 +7,31 @@ From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008
 Once you have accumulated the counts for each hour, print out the counts,
 sorted by hour as shown below.
 '''
-
-file = open("mbox-short.txt", "r")
+# opening the file in read mode in file variable
+file = open("mbox-short.txt","r")
 # print(file.read())
 
+# storing its text in data
 data = file.read()
+
+# closing the after its work is completed
+# file.close()
+
+# splitting the textual data by word ("From ") and storing in list record
 record = data.split("From ")
 
-dict1 = {}
-list1 = []
+# declaring en empty list to store the specific time at which mail has sent
+hour_list = []
 
+# for loop to split the text of ever element of the record list and storing in a time[] list
 for i in range(1,len(record)):
     time = record[i].split()
-    
+    # storing the value of 5th index of time list in hour as the 5th index is holding the time at which mail has sent
     hour = time[4]
-    list1.append(hour)
+    hour_list.append(hour) # appending the extracted time in hour list
 
-list1.sort()
-print(list1)
+# sorting the list in increasing order
+hour_list.sort()
 
-file.close()
+# printing the hour list 
+print(hour_list)
