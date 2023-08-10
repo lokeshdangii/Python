@@ -15,7 +15,7 @@ file = open("mbox-short.txt","r")
 data = file.read()
 
 # closing the after its work is completed
-# file.close()
+file.close()
 
 # splitting the textual data by word ("From ") and storing in list record
 record = data.split("From ")
