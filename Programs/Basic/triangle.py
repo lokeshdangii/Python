@@ -1,3 +1,5 @@
+# Python program to calculate area of triangle
+
 base = float(input('Enter base: '))
 height = float(input('Enter height: '))
 

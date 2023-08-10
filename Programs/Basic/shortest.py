@@ -1,8 +1,8 @@
 text = input("Enter some text: ")
 
-# Finding longest word
+# Finding shortest word
 shortest = min(text.split(), key=len)
 
-# Displaying longest word
+# Displaying shortest word
 print("Shortest word is: ", shortest)
 print("And its length is: ", len(shortest))
