@@ -1,3 +1,5 @@
+# Program to print hollo glass pattern
+
 # Reading number of rows
 row = int(input("Enter number of rows: "))
 
