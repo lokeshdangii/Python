@@ -46,10 +46,10 @@ print() #next line
 
 max_count = max(name_count.values()) # storing the maximum count 
 
+# for loop to check and print which person have send mail most number of time
 for key, value in name_count.items():
         if value == max_count:  
-            print(f"Name : {key}, Mail_Count : {value}") #printing which person have send mail most number of time
-
+            print(f"Name : {key}, Mail_Count : {value}") 
 
 
 
