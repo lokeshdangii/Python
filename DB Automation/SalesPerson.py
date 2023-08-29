@@ -2,64 +2,46 @@ import mysql.connector
 from faker import Faker
 import random
 
-# Connect to the MySQL database
-db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="root",
-    database="cardb"
-)
-
-cursor = db.cursor()
-fake = Faker()
-
-# Table creation queries
-create_table_queries = [
-    """
-    CREATE TABLE SalesPerson (
-        SalesPersonID INT NOT NULL PRIMARY KEY,
-        SP_Name VARCHAR(50) NOT NULL,
-        Gender VARCHAR(10) NOT NULL,
-        DateofBirth DATE NOT NULL,
-        MobileNo BIGINT NOT NULL,
-        email VARCHAR(100) NOT NULL,
-        Adress1 VARCHAR(100) NOT NULL,
-        Adress2 VARCHAR(100) NOT NULL,
-        City VARCHAR(50) NOT NULL,
-        State VARCHAR(50) NOT NULL,
-        PinCode VARCHAR(20) NOT NULL
+def create_salesperson():
+    db = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="root",
+        database="cardb"
     )
-    """,
-]
+    cursor = db.cursor()
 
-# Execute table creation queries
-for query in create_table_queries:
-    cursor.execute(query)
+    fake = Faker()
 
-# Populate SalesPerson table with sequential IDs within the range (1 to 40)
-for sales_person_id in range(1, 40):  # Adjust the range as needed
-    insert_query = """
-    INSERT INTO SalesPerson (SalesPersonID, SP_Name, Gender, DateofBirth, MobileNo, email, Adress1, Adress2, City, State, PinCode)
-    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-    """
-    data = (
-        sales_person_id,  # Use sequential SalesPersonID
-        fake.name(),
-        random.choice(["Male", "Female"]),
-        fake.date_of_birth(),
-        fake.random_int(min=1000000000, max=9999999999),
-        fake.email(),
-        fake.street_address(),
-        fake.secondary_address(),
-        fake.city(),
-        fake.state(),
-        fake.zipcode()
-    )
-    cursor.execute(insert_query, data)
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS SalesPerson (
+            SalesPersonID INT NOT NULL PRIMARY KEY,
+            SP_Name VARCHAR(50),
+            Gender VARCHAR(10) NOT NULL,
+            DateOfBirth DATE NOT NULL,
+            MobileNo VARCHAR(15) NOT NULL,
+            email VARCHAR(100) NOT NULL,
+            Address1 VARCHAR(100) NOT NULL,
+            Address2 VARCHAR(100) NOT NULL,
+            City VARCHAR(50) NOT NULL,
+            State VARCHAR(50) NOT NULL,
+            PinCode VARCHAR(20) NOT NULL
+        )
+    """)
 
-# Similarly, you can create and populate other tables
+    salesperson_data = []
+    for i in range(1, 36):
+        salesperson_data.append((i, fake.name(), fake.random_element(["Male", "Female"]), fake.date_of_birth(minimum_age=25, maximum_age=65),
+                                 fake.phone_number()[:11], fake.email(), fake.street_address(), fake.secondary_address(), fake.city(),
+                                 fake.state(), fake.zipcode()))
+    insert_salesperson_query = "INSERT INTO SalesPerson (SalesPersonID, SP_Name, Gender, DateOfBirth, MobileNo, email, Address1, Address2, City, State, PinCode) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+    cursor.executemany(insert_salesperson_query, salesperson_data)
 
-# Commit the changes and close the connection
-db.commit()
-cursor.close()
-db.close()
+    db.commit()
+    cursor.close()
+    db.close()
+
+    print("SalesPerson table created and populated successfully.")
+
+if __name__ == "__main__":
+    create_salesperson()
