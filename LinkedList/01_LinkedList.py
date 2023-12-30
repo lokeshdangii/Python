@@ -105,22 +105,21 @@ class LinkedList:
 
     # remove by value
     def remove_by_value(self,value):
-
         itr = self.head
-        while itr:
 
-            if itr.data == value:
+        # Special case for removing the head node
+        if itr and itr.data == value:
+            self.head = itr.next
+            return
+
+        while itr.next:
+
+            if itr.next.data == value:
                 itr.next = itr.next.next
-                ll.print()
                 break
-
             itr = itr.next
-
-
-        print("value not found")
-
-
-
+        
+    
 # main function
 if __name__ == '__main__':
     ll = LinkedList()
@@ -130,8 +129,8 @@ if __name__ == '__main__':
     ll.insert_at_end(40)
     ll.insert_at_end(50)
     ll.insert_at_end(60)
-    ll.insert_after_value(5,0)
-    ll.remove_by_value(50)
+    # ll.insert_after_value(5,0)
+    ll.remove_by_value(5)
     # ll.insert_at(3,2000)
     # ll.insert_at(4,4000)
     # ll.insert_at(5,6000)
