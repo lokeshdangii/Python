@@ -1,4 +1,4 @@
-rom collections import deque
+from collections import deque
 
 class Stack:
     def _init_(self):
