@@ -20,7 +20,6 @@ class Stack:
         print(self.container)
         return self.container
 
-
 # instantiating three stack towers
 tower_1 = Stack()
 tower_2 = Stack()
@@ -30,6 +29,7 @@ tower_3 = Stack()
 tower_1.push('C')
 tower_1.push('B')
 tower_1.push('A')
+
 # printing initial state
 print("---------------- Tower 3 ----------------------\n")
 tower_1.display()
@@ -59,6 +59,7 @@ tower_3.push(tower_1.pop())
 # printing
 print("\n---------------- Tower 3 ----------------------\n")
 tower_3.display()
+
 
 
 
