@@ -47,6 +47,61 @@ class DoublyLinkedList:
             itr = itr.prev
         print(llstr)
 
+    # Length function
+    def get_length(self):
+        count = 0
+        itr = self.head
+        while itr:
+            count += 1
+            itr = itr.next
+
+        return count
+
+    def insert_at(self,index,data):
+        if index<0 or index > self.get_length():
+            raise Exception('--------------- Invalid Index --------------')
+
+        if index == 0:
+            self.insert_at_beginning()
+            return
+
+        count= 0
+        itr = self.head
+        
+        while itr:
+
+            if count == index-1:
+                node = Node(data,itr.next,itr)
+
+                if node.next:
+                    node.next.prev = node
+                
+                itr.next = node
+                break
+
+            itr = itr.next
+            count += 1
+
+    # function to remove node from specific position
+    def remove_at(self,index):
+        if index < 0 or index > self.get_length():
+            raise Exception("------- Invalid Index ------------")
+
+        if index == 0:
+            self.head = self.head.next
+
+        count =0
+        itr = self.head
+
+        while itr:
+            if count == index-1:
+                itr.next = itr.next.next
+                itr.next.prev = itr.next 
+                break
+
+            itr = itr.next
+            count += 1
+
 
 # main function
 if __name__ == '__main__':
@@ -62,6 +117,11 @@ if __name__ == '__main__':
     dll.insert_at_end(12)
     dll.insert_at_end(14)
     dll.insert_at_end(16)
+
+    dll.insert_at(3,2000)
+    print(dll.get_length())
+
+    dll.remove_at(3)
 
     print("--------------- Linked List print in forward ---------")
     dll.print_forward()
